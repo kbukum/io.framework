@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.oopdev.io.core.app.IOCoreConstants;
+import com.oopdev.io.core.bean.create.IOBeanWebCreator;
 import com.oopdev.io.core.bean.support.IOBeanSupportMap;
+import com.oopdev.io.core.bean.support.IOReturnBean;
 import com.oopdev.io.core.component.loader.IOComponentMap;
 import com.oopdev.io.core.component.reflects.pojo.IOClass;
 import com.oopdev.io.core.component.reflects.pojo.IOMethod;
@@ -155,14 +157,17 @@ public class IOJsonWebServer {
 			// buradan baslatalim
 			// Oncelikle support durumu ve priority'e gore external bean
 			// managers(cdi,spring...) cagriliyor.
-			Object responseObject = IOBeanSupportMap.getComponent(
-					IOJsonServiceComponentManager.class.getName(), ioClass);
+			IOReturnBean ioReturnBean=IOBeanSupportMap.getComponent(IOJsonServiceComponentManager.class.getName(), ioClass);
+			Object responseObject = ioReturnBean.getObject();
 			Object result = null;
 			if (responseObject != null) {
 				result = IOUtilMethodReflections.invokeMethod(
 						ioMethod.getMethod(), responseObject,
 						inputList.toArray());
 			}
+//			if(ioReturnBean.getBeanManagerUniqueName()!=null&&IOCoreConstants.IO_CONTEXT_MANAGEMENT_UNIQUE_NAME.equals(ioReturnBean.getBeanManagerUniqueName())){
+//				IOBeanWebCreator.setComponent(IOJsonServiceComponentManager.class.getName(), ioClass.getClassName(), result);
+//			}
 			resultData = new JsonResult(result, "SUCCESS", "").toString();
 		} catch (Exception e) {
 			resultData = new JsonResult("", "FAIL", e.getMessage()).toString();

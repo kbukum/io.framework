@@ -1,5 +1,7 @@
 package com.oopdev.io.core.app;
 
+import com.oopdev.io.core.context.IOContextSupportType;
+
 /**
  * 
  * @author kamilbukum
@@ -15,6 +17,8 @@ public class IOCoreConstants {
 	public static 	    String IO_CHARACTER_ENCODING_VALUE="UTF-8";
 	public static final String IO_CHARACTER_ENCODING_KEY="IO_CHARACTER_ENCODING";
 	public static final String IO_SECURITY_PACKAGE_NAME="com.oopdev.io.security.manager.IOSecurityManager";
+	public static final IOContextSupportType IO_CONTEXT_MANAGEMENT_UNIQUE_NAME=IOContextSupportType.IO;
+	public static final String CDI_CONTEXT_MANAGEMENT_UNIQUE_NAME="IO_CDI_MANAGEMENT";	
 	protected static    int	   IO_PROJECT_TYPE=IOProjectType.CONSOLE.getProjectType();
 	public static IOProjectType  getIOProjectType() {
 		return IOProjectType.getProjectType(IO_PROJECT_TYPE);

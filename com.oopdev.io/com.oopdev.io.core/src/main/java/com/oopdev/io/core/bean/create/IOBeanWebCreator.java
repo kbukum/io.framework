@@ -24,7 +24,7 @@ public class IOBeanWebCreator {
 			o=IOWebContext.getCurrentInstance().getSession().getAttribute("IO_SESSION_"+projectId+"_"+name);
 			if(o==null){
 				o=IOTypeUtil.newInstance(clazz);
-				IOWebContext.getCurrentInstance().getSession().setAttribute("IO_CONVERSATION_"+projectId+"_"+name, o);
+				IOWebContext.getCurrentInstance().getSession().setAttribute("IO_SESSION_"+projectId+"_"+name, o);
 			}
 		}else if(scope==IOScopeType.APPLICATION){
 			o=IOWebContext.getApplication().getAttribute("IO_APPLICATION_"+projectId+"_"+name);

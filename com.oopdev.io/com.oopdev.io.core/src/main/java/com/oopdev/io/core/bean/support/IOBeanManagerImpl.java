@@ -3,6 +3,7 @@ package com.oopdev.io.core.bean.support;
 import com.oopdev.io.core.app.IOCoreConstants;
 import com.oopdev.io.core.app.IOProjectType;
 import com.oopdev.io.core.bean.create.IOBeanWebCreator;
+import com.oopdev.io.core.context.IOContextSupportType;
 import com.oopdev.io.util.common.IOTypeUtil;
 import com.oopdev.io.util.exceptions.IOUtilException;
 
@@ -24,4 +25,11 @@ public class IOBeanManagerImpl extends IOBeanManager{
 		}
 		return  IOTypeUtil.newInstance(clazz);
 	}
+	@Override
+	public IOContextSupportType getProjectUniqueName() {
+		return IOContextSupportType.IO;
+	}
+	
+	
+	
 }

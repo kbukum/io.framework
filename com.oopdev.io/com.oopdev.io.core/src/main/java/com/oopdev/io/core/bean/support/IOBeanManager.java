@@ -2,6 +2,7 @@ package com.oopdev.io.core.bean.support;
 
 import com.oopdev.io.core.component.loader.IOComponentMap;
 import com.oopdev.io.core.component.reflects.pojo.IOClass;
+import com.oopdev.io.core.context.IOContextSupportType;
 import com.oopdev.io.core.exceptions.IOCoreException;
 import com.oopdev.io.util.exceptions.IOUtilException;
 
@@ -78,6 +79,7 @@ public abstract class IOBeanManager implements Comparable<IOBeanManager>{
 	 * @throws IOUtilException
 	 */
 	public abstract Object getComponent(String projectId,String name,Class<?> clazz) throws IOUtilException;
+	public abstract IOContextSupportType getProjectUniqueName();
 	/**
 	 * 
 	 * @return

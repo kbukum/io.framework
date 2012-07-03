@@ -31,4 +31,5 @@ public enum IOProjectType {
 		}
 		return IOProjectType.CONSOLE;
 	}
+	
 }

@@ -22,12 +22,12 @@ public class IOBeanSupportMap {
 	 * @return
 	 * @throws IOCoreException
 	 */
-	public static Object getComponent(String projectId,IOClass ioClass) throws IOCoreException{
+	public static IOReturnBean getComponent(String projectId,IOClass ioClass) throws IOCoreException{
 		for (IOBeanManager beanManager : beanManagerMap) {
 			try{
-			Object o=beanManager.getComponent(projectId,ioClass);
-			if(o!=null){
-				return o;
+				IOReturnBean bean=new IOReturnBean(beanManager.getComponent(projectId,ioClass),beanManager.getProjectUniqueName().name());
+			if(bean.getObject()!=null){
+				return bean;
 			}
 			}catch (Exception e) {
 				throw new IOCoreException("com.oopdev.io.core.bean.support.IOBeanSupportMap.getComponent.exception",new Object[]{e.getMessage()},e);

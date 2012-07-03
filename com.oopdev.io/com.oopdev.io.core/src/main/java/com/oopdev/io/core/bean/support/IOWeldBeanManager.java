@@ -6,6 +6,8 @@ import javax.enterprise.inject.spi.BeanManager;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import com.oopdev.io.core.app.IOCoreConstants;
+import com.oopdev.io.core.context.IOContextSupportType;
 import com.oopdev.io.core.exceptions.IOCoreException;
 /**
  * 
@@ -46,5 +48,11 @@ public class IOWeldBeanManager extends IOBeanManager{
 			}catch (Exception e) {
 				 throw new IOCoreException("com.oopdev.io.core.bean.support.IOCDIBeanManager.getComponent.exception",new Object[]{e.getMessage()},e);
 			}
-	}	
+	}
+
+	@Override
+	public IOContextSupportType getProjectUniqueName() {
+		return IOContextSupportType.CDI;
+	}
+
 }
