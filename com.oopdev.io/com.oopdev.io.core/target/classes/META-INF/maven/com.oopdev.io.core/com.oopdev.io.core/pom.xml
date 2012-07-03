@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>com.oopdev.io</artifactId>
+    <groupId>com.oopdev.io</groupId>
+    <version>Beta-1.0</version>
+    <relativePath>..</relativePath>
+  </parent>
+  <groupId>com.oopdev.io.core</groupId>
+  <artifactId>com.oopdev.io.core</artifactId>
+  <name>com.oopdev.io.core</name>
+  
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>com.oopdev.io.loader</groupId>
+  		<artifactId>com.oopdev.io.loader</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.oopdev.io.util</groupId>
+  		<artifactId>com.oopdev.io.util</artifactId>
+  	</dependency>
+  </dependencies>
+</project>
